@@ -1,0 +1,361 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+:root {
+  --primary-color: #4CAF50;
+  --primary-dark: #2E7D32;
+  --secondary-color: #7f3fbf;
+  --accent-color: #FFC107;
+  --text-color: #333;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e2e2e2;
+  --dark-gray: #7f8c8d;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  padding: 1.25rem 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9375rem;
+}
+
+.logo-img {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.main-container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 1.875rem auto;
+  padding: 0 1.25rem;
+  flex: 1;
+}
+
+.breadcrumb {
+  padding: 0.625rem 0;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.breadcrumb a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 1.875rem;
+  margin-top: 0.625rem;
+}
+
+/* ===== PANELES ===== */
+.left-panel,
+.right-panel {
+  background: var(--white);
+  border-radius: 0.625rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5625rem;
+}
+
+.left-panel {
+  flex: 1 1 60%;
+  min-width: 18.75rem;
+}
+
+.right-panel {
+  flex: 1 1 35%;
+  min-width: 16.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9375rem;
+}
+
+/* ===== BADGE ===== */
+.badge {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 0.5rem 0.875rem;
+  border-radius: 3.125rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* ===== BUSCADOR ===== */
+.search-box {
+  background: #f1f1f1;
+  padding: 0.9375rem;
+  border-radius: 0.5rem;
+}
+
+.search-box form {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.search-box input[type="text"] {
+  flex: 1;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--medium-gray);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-box input[type="text"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.search-box button {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.625rem 1.125rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-box button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== LISTA DE INFORMACIÓN ===== */
+.info-list {
+  max-height: 31.25rem;
+  overflow-y: auto;
+  border: 1px solid var(--medium-gray);
+  border-radius: 0.5rem;
+}
+
+.info-item {
+  padding: 0.75rem 0.9375rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fafafa;
+  transition: background 0.2s;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item.active,
+.info-item:hover {
+  background: #e8f5e9;
+}
+
+/* ===== DETALLES ===== */
+.detalle-box {
+  background: var(--white);
+  border-radius: 0.5rem;
+}
+
+.detalle-inner {
+  background: #e8f5e9;
+  padding: 1.5625rem;
+  border-radius: 0.625rem;
+}
+
+.detalle-inner h2 {
+  margin-bottom: 0.625rem;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+.detalle-inner p {
+  margin-top: 0.625rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  color: var(--text-color);
+}
+
+/* ===== PLACEHOLDER ===== */
+.placeholder {
+  padding: 3.75rem;
+  text-align: center;
+  border: 2px dashed #ccc;
+  border-radius: 0.5rem;
+  background: var(--white);
+  color: #555;
+}
+
+/* ===== BANNER INFORMATIVO ===== */
+.info-banner {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: 1.25rem;
+  margin: 1.25rem auto;
+  max-width: 90%;
+  border-radius: 0.625rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-left: 0.3125rem solid var(--accent-color);
+}
+
+.info-banner::before {
+  content: "";
+  position: absolute;
+  top: -0.625rem;
+  right: -0.625rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.info-banner h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.info-banner h2::before {
+  content: "❗";
+  margin-right: 0.625rem;
+  font-size: 1.8rem;
+}
+
+.info-banner p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* ===== TABLAS ===== */
+table {
+  width: 100%;
+  margin-top: 1.875rem;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+table th {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #e8f5e9;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 3.75rem;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 60rem) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .left-panel,
+  .right-panel {
+    flex: none;
+    width: 100%;
+  min-width: 0;
+  }
+  
+  .info-banner {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo-img {
+    margin-right: 0;
+    margin-bottom: 0.625rem;
+  }
+  
+  .search-box form {
+    flex-direction: column;
+  }
+  
+  .search-box input[type="text"],
+  .search-box button {
+    width: 100%;
+  }
+}
